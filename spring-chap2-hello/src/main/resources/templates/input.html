@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>入力</title>
+</head>
+<body>
+		<!--見出し-->
+		<h1>入力フォーム</h1>
+		<!--fromタグはmethodとactionを使ってjavaの指定メソッドに処理を飛ばせる-->
+		<!--何かしらの入力フォームは「form」タグを使うのが通例-->
+		<form method="post" action="/input">
+			<label>名前：</label>
+			<input type="text" name="name" placeholder="田中 太郎" />
+			
+			<button>送信</button>
+		</form>
+		<a href="/">ホームに戻る</a>
+</body>
+</html>
