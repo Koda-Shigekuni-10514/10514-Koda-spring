@@ -4,16 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class OmikujiController {
 	
 	
 	@GetMapping("/omikuji") //GETリクエストを受け取るURLを指定
-	public String index(
-			Model model
-			) {
+	public String index() {
 		
 
 //		omikuji.htmlを表示させる
@@ -22,7 +19,6 @@ public class OmikujiController {
 	
 	@PostMapping("/omikuji")
 	public String omikuji(
-			@RequestParam(name = "kuzi") String kuzi,
 			Model model
 			) {
 		

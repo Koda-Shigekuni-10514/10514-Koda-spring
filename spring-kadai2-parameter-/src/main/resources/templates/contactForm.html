@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+		
+		<h1>研修お問い合わせ</h1>
+		<ul >
+			<li th:each="error :${errorList}">[[${error}]]</li>
+		</ul>
+		<form method="post" action="/contact">
+			<table border="1">
+				<tr>
+					<th>お名前[必須]</th>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<th>メールアドレス[必須]</th>
+					<td><input type="text" name="email"></td>
+				</tr>
+			</table>
+			<button>送信</button>
+		</form>
+	
+</body>
+</html>

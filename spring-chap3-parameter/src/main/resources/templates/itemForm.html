@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>商品登録</title>
+</head>
+<body>
+	<h1>商品登録</h1>
+	<form method="post" action="/item">
+		<input type="text" name = "name" placeholder="商品名"><br>
+		<input type="number" name="price" placeholder="価格"><br>
+		<p>
+			<input type="radio" name="genre"  value="1">家電製品
+			<input type="radio" name="genre"  value="2">文房具
+			<input type="radio" name="genre"  value="３">人間
+		</p>
+		<p>
+			<input type="checkbox" name="color" value="red" >赤
+			<input type="checkbox" name="color" value="bule">青
+			<input type="checkbox" name="color" value="yellow">黄色
+		</p>
+		
+		
+		<button>送信</button>
+		
+	</form>
+</body>
+</html>

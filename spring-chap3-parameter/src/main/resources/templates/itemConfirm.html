@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>商品確認</title>
+</head>
+<body>
+		<h1>商品情報</h1>
+		
+		<p >商品名：[[${name}]]</p>
+		<p >価格：[[${price}]]円</p>
+		<th:block th:if="${genre == 1}">
+			ジャンル：家電製品<br>
+		</th:block>
+		<th:block th:if="${genre == 2}">
+			ジャンル：文房具<br>
+		</th:block>
+		<th:block th:if="${genre == 3}">
+			ジャンル：例のアレ<br>
+		</th:block>
+		色:
+		<th:block th:each="color : ${colorList}">[[${color}]],
+			
+		</th:block>
+		
+		
+		
+</body>
+</html>

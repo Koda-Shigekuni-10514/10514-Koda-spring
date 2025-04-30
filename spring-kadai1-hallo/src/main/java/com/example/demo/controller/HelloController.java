@@ -9,33 +9,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloController {
 	@GetMapping("/") //GETリクエストを受け取るURLを指定
-	public String index(
-			Model model
-			) {
+	public String index() {
 		
 
-//		hello.htmlを表示させる
+//		index.htmlを表示させる
 		return "index";
 	}
 	
-	@GetMapping("/input") //GETリクエストを受け取るURLを指定
-	public String input(
-			Model model
-			) {
+	@GetMapping("/hello") //GETリクエストを受け取るURLを指定
+	public String input() {
 		
 //		input.htmlを表示させる
 		return "input";
 	}
 	
 	
-	@GetMapping("/hello") //GETリクエストを受け取るURLを指定
-	public String hello(
-			Model model
-			) {
-		
-//		input.htmlを表示させる
-		return "hello";
-	}
 	
 	@PostMapping("/hello") //Postリクエストを受け取るURLを指定
 	public String show(
