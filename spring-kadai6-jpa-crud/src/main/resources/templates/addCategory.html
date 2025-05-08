@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>カテゴリー登録</title>
+</head>
+<body>
+				<h1>新規登録</h1>
+				<p>新しいカテゴリー名を入力してください</p>
+				<p th:text="${error}"></p>
+			<form method="post" action="/category/add">
+				<table border="1">
+					<tr>
+						<th>カテゴリー名</th>
+						<td><input type="text" name="name"></td>
+					</tr>
+				</table>
+				<button>登録</button>
+			</form>
+</body>
+</html>

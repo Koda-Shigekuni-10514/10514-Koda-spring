@@ -62,6 +62,7 @@ public class ItemController {
 
 			
 			model.addAttribute("itemList" , itemList);
+			model.addAttribute("maxPrice",maxPrice);
 			
 			return "items";
 		}

@@ -10,7 +10,7 @@
 	<h1>商品一覧</h1>
 	
 	<form method="get" action="/items">
-			<input type="number" name="maxPrice">円以下
+			<input type="number" name="maxPrice" th:value="${maxPrice}">円以下
 			<button>検索</button>
 	</form><br>
 	

@@ -1,5 +1,4 @@
 package com.example.demo.controller;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -24,28 +23,22 @@ public class ItemController {
 		ItemRepository itemRepository;
 		
 	
-	
+		//一覧画面(Items)
 		@GetMapping("/items")
-		public String showItem(
-				  //検索系のパラメータはdefaultValueがないとエラーになってしまう
-				@RequestParam(name="keyword", defaultValue = "") String keyword,
+		public String index(
 				Model model) {
 			
 			
 			List<Item> itemList = new ArrayList<Item>();
 			
-			if(keyword != null && keyword.length() > 0) {
-				itemList = itemRepository.findBykeyword("%" + keyword + "%");
-			}else {
-				itemList  =  itemRepository.findAll();
-			}
-			
-			
+
+			itemList  =  itemRepository.findAll();
 			
 			model.addAttribute("itemList" , itemList);
 			
 			return "items";
 		}
+		
 		
 		//商品追加画面を出す
 		@GetMapping("/items/add")
@@ -70,7 +63,7 @@ public class ItemController {
 		}
 		
 		@GetMapping("/items/{id}/edit")
-		public String update(
+		public String edit(
 				@PathVariable(name="id") Integer id,
 				Model model
 				) {
@@ -92,7 +85,7 @@ public class ItemController {
 		
 		//更新画面で更新をする処理
 		@PostMapping("/items/{id}/edit")
-		public String edit(
+		public String update(
 				@PathVariable("id") Integer id,
 				@RequestParam(name="categoryId",defaultValue = "") Integer categoryId,
 				@RequestParam(name="name",defaultValue = "") String name,
@@ -127,8 +120,6 @@ public class ItemController {
 			if(!itemOption.isEmpty()) {
 				itemRepository.deleteById(id);
 			}
-			
-			
 			
 			return "redirect:/items";	
 		}

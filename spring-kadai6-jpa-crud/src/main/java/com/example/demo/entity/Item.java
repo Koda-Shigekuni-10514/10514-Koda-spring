@@ -17,8 +17,6 @@ public class Item {
 //			  , price integer
 //			);
 	
-	
-	
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)  //DBのテーブルの主キーが自動連番の場合に必要になるアノテーション
 		private Integer id;                        //主キーであることを宣言
