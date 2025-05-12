@@ -41,35 +41,4 @@ public class Cart {
             itemList.add(item);
         }
     }
-
-
-    public int getTotalPrice(){
-
-        Integer total = 0;
-
-        for(Item items:itemList){
-            total += items.getPrice() * items.getQuantity();
-        }
-        return total;
-    }
-
-
-
-    public void delete(int itemId){
-        for(Item item : itemList){
-            if(item.getId() == itemId){
-                itemList.remove(item);
-                break;
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-
 }

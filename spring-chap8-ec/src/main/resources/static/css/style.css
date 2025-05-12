@@ -24,36 +24,24 @@ header h1 {
   font-size: 20pt;
   margin: 10px auto;
 }
-h2 {
-  color: #000000;
-}
-h3 {
-  color: #000000;
-}
-p {
-  color: #000000;
-}
-
 /* 仕切り線 */
 hr {
   border-top: 2px dashed #7d8bae;
 }
 /* メイン */
 main {
-  background-color: #616161;
+  background-color: #1b1b1b;
   min-height: 50px;
   padding: 20px;
   font-family: serif;
-  background-image: url(../img/backImg.png);
 }
 /* 表線 */
 table,
 th,
 td {
   border-collapse: collapse;
-  border: 1px solid #000000;
-  color: #e6e6e6;
-  background: #696969;
+  border: 1px solid #bd9160;
+  color: #eeeeee;
 }
 /* 表 */
 table {
@@ -62,7 +50,7 @@ table {
 }
 /* 表見出しセル */
 table th {
-  background: #2e2e2e;
+  background: #ffaa3b;
   color: #ffffff;
 }
 /* 送信ボタン */
