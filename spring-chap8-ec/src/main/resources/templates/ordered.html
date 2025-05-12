@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>注文完了</title>
+    <link rel="styleSheet" href="/css/style.css" />
+  </head>
+  <body>
+    <span th:replace="header"></span>
+    <main>
+      <h3>ご注文ありがとうございました</h3>
+      <p>お客様の注文番号は</p>
+      <h3><span th:text="${orderNumber}" style="color: red"></span></h3>
+      <p>になります</p>
+    </main>
+
+    <span th:replace="footer"></span>
+  </body>
+</html>
