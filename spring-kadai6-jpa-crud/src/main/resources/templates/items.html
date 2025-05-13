@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-		<meta charset="UTF-8">
-		<title>商品一覧</title>
-</head>
-<body>
-		
-	
-	<h1>商品一覧</h1>	
-	
-	<table border="1">
-		<tr>
-			<th>ID</th>
-			<th>商品名</th>
-			<th>値段</th>
-			<th>更新</th>
-			<th>削除</th>
-		</tr>
-		<tr th:each="item : ${itemList}">
-			<td th:text="${item.id}"></td>
-			<td th:text="${item.name}"></td>
-			<td th:text="${item.price}"></td>
-			
-			<td>
-				<form method="get" th:action="|/items/${item.id}/edit|">
-				<button>更新</button>
-				</form>
-			</td>
-			<td>
-				<form method="post" th:action="|/items/${item.id}/delete|">
-					<button>削除</button>
-				</form>
-			</td>
-		</tr>
-	</table>
-		<a href="/items/add">新規登録</a>
-		<a href="/category">カテゴリー 一覧へ</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>商品一覧</title>
+  </head>
+  <body>
+    <h1>商品一覧</h1>
+
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>商品名</th>
+        <th>値段</th>
+        <th>更新</th>
+        <th>削除</th>
+      </tr>
+      <tr th:each="item : ${itemList}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.price}"></td>
+
+        <td>
+          <form method="get" th:action="|/items/${item.id}/edit|">
+            <button>更新</button>
+          </form>
+        </td>
+        <td>
+          <form method="post" th:action="|/items/${item.id}/delete|">
+            <button>削除</button>
+          </form>
+        </td>
+      </tr>
+    </table>
+    <a href="/items/add">新規登録</a>
+    <a href="/category">カテゴリー 一覧へ</a>
+  </body>
 </html>

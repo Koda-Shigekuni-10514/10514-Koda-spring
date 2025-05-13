@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>カテゴリー更新</title>
+  </head>
+  <body>
+    <h1>カテゴリー更新</h1>
+    <main>
+      <h3>変更するカテゴリーを入力してください</h3>
+      <form method="post" th:action="|/category/${id}/edit|">
+        <table border="1">
+          <tr>
+            <th>カテゴリーID</th>
+            <td th:text="${category.id}"></td>
+          </tr>
+          <tr>
+            <th>カテゴリー名</th>
+            <td>
+              <input type="text" name="name" th:value="${category.name}" />
+            </td>
+          </tr>
+        </table>
+        <button>更新</button>
+      </form>
+    </main>
+  </body>
+</html>

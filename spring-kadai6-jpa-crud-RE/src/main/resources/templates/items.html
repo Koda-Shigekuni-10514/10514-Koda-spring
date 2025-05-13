@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>商品一覧</title>
+  </head>
+  <body>
+    <h1>商品一覧</h1>
+    <main>
+      <table border="1">
+        <tr>
+          <th>商品ID</th>
+          <th>商品名</th>
+          <th>値段</th>
+          <th>更新</th>
+          <th>削除</th>
+        </tr>
+        <tr th:each="items : ${itemList}">
+          <td th:text="${items.id}"></td>
+          <td th:text="${items.name}"></td>
+          <td th:text="${items.price}"></td>
+          <td>
+            <form method="get" th:action="|/items/${items.id}/edit|">
+              <input type="hidden" name="itemId" th:value="${items.id}" />
+              <button>更新</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" th:action="|/items/${items.id}/delete|">
+              <input type="hidden" name="itemId" th:value="${items.id}" />
+              <button>削除</button>
+            </form>
+          </td>
+        </tr>
+      </table>
+      <a href="/items/add">新規登録</a>
+    </main>
+  </body>
+</html>

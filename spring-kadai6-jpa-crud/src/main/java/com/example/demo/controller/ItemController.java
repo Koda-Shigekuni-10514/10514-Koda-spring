@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class ItemController {
 			List<Item> itemList = new ArrayList<Item>();
 			
 
-			itemList  =  itemRepository.findAll();
+			itemList  =  itemRepository.findAll(Sort.by(Sort.Direction.ASC,"id"));
 			
 			model.addAttribute("itemList" , itemList);
 			
