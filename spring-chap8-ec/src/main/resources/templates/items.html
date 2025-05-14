@@ -2,21 +2,36 @@
 <head>
   <meta charset="UTF-8" />
   <title>商品一覧</title>
-  <link href="/css/style.css" rel="styleSheet" />
+  <!-- <link href="/css/style.css" rel="styleSheet" /> -->
+  <link
+    rel="stylesheet"
+    th:href="@{/webjars/bootstrap/5.3.5/css/bootstrap.min.css}"
+  />
 </head>
 <body>
   <header th:replace="header"></header>
-  <main>
-    <nav>
-      <a href="/items">全商品</a>
-      <th:block th:each="categories : ${categoryList}">
+  <div class="dropdown">
+    <a
+      class="btn btn-secondary dropdown-toggle"
+      role="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      商品ソート
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="/items">全商品</a></li>
+      <li th:each="categories : ${categoryList}">
         <a
+          class="dropdown-item"
           th:href="|/items?categoryId=${categories.id}|"
           th:text="${categories.name}"
         ></a>
-      </th:block>
-    </nav>
-    <table border="1">
+      </li>
+    </ul>
+  </div>
+  <main>
+    <table border="1" class="table table-striped">
       <tr>
         <th>No</th>
         <th>商品名</th>
@@ -30,11 +45,15 @@
         <td>
           <form method="post" action="/cart/add">
             <input type="hidden" name="itemId" th:value="${item.id}" />
-            <button>カートに追加</button>
+            <button class="btn btn-primary">カートに追加</button>
           </form>
         </td>
       </tr>
     </table>
   </main>
   <footer th:replace="footer"></footer>
+  <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script
+    th:src="@{/webjars/bootstrap/5.3.5/js/bootstrap.bundle.min.js}"
+  ></script>
 </body>

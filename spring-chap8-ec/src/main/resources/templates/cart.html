@@ -5,28 +5,14 @@
   <link href="/css/style.css" rel="styleSheet" />
 </head>
 <body>
-  <header th:replace="header"></header>
+  <span th:replace="header"></span>
   <main>
-    <table>
-      <tr>
-        <th>No</th>
-        <th>商品名</th>
-        <th>値段</th>
-        <th>個数</th>
-        <th>小計</th>
-      </tr>
-      <tr th:each="carts : ${@cart.itemList}">
-        <td>[[${carts.id}]]</td>
-        <td>[[${carts.name}]]</td>
-        <td>[[${carts.price}]]</td>
-        <td>[[${carts.quantity}]]</td>
-        <td>[[${carts.price * carts.quantity}]]</td>
-      </tr>
-      <tr>
-        <td colspan="5">総計：</td>
-        <td></td>
-      </tr>
-    </table>
+    <span th:replace="cartItem"></span>
+    <th:block th:if="${@cart.itemList.size() > 0}">
+      <form method="get" action="/order">
+        <button>注文する</button>
+      </form>
+    </th:block>
   </main>
-  <footer th:replace="footer"></footer>
+  <span th:replace="footer"></span>
 </body>
