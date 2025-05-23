@@ -2,7 +2,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>ログイン</title>
-   <link href="/css/style.css" rel="stylesheet" /> 
   <link
     rel="stylesheet"
     th:href="@{/webjars/bootstrap/5.3.5/css/bootstrap.min.css}"
@@ -10,11 +9,24 @@
 </head>
 <body>
   <header>
-    <h1>サンプルショッピング</h1>
+    <span class="d-block p-2 text-bg-dark">
+      <h1>サンプルショッピング</h1>
+    </span>
   </header>
   <main>
     <form method="post" action="/login">
-      <input type="text" name="name" placeholder="名前を入力してください" />
+      <div class="form-floating container">
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="名前を入力してください"
+            />
+          </div>
+        </div>
+      </div>
       <button class="btn btn-primary">ログイン</button>
       <br /><span th:text="${message}" style="color: red"></span>
     </form>
@@ -22,8 +34,7 @@
   <footer>
     <small>&copy; ABCショップ</small>
   </footer>
-  <script th:src="@{/webjars/jquery/jquery.min.js}">
-  </script>
+  <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
   <script
     th:src="@{/webjars/bootstrap/5.3.5/js/bootstrap.bundle.min.js}"
   ></script>
